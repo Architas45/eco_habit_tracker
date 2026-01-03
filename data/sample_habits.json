@@ -1,0 +1,202 @@
+{
+  "sample_habits": [
+    {
+      "id": 1,
+      "text": "took the bus to work instead of driving",
+      "category": "transport",
+      "impact_score": 30.0,
+      "timestamp": "2024-01-15T09:30:00Z"
+    },
+    {
+      "id": 2,
+      "text": "turned off all lights when leaving the office",
+      "category": "energy",
+      "impact_score": 16.0,
+      "timestamp": "2024-01-15T18:45:00Z"
+    },
+    {
+      "id": 3,
+      "text": "brought reusable bags to the grocery store",
+      "category": "waste",
+      "impact_score": 15.0,
+      "timestamp": "2024-01-16T14:20:00Z"
+    },
+    {
+      "id": 4,
+      "text": "had a plant-based lunch at work",
+      "category": "food",
+      "impact_score": 24.2,
+      "timestamp": "2024-01-16T12:15:00Z"
+    },
+    {
+      "id": 5,
+      "text": "took a shorter shower to save water",
+      "category": "water",
+      "impact_score": 10.8,
+      "timestamp": "2024-01-17T07:00:00Z"
+    },
+    {
+      "id": 6,
+      "text": "bought organic vegetables from local farmer's market",
+      "category": "consumption",
+      "impact_score": 23.4,
+      "timestamp": "2024-01-17T10:30:00Z"
+    },
+    {
+      "id": 7,
+      "text": "walked to the coffee shop instead of driving",
+      "category": "transport",
+      "impact_score": 30.0,
+      "timestamp": "2024-01-18T08:15:00Z"
+    },
+    {
+      "id": 8,
+      "text": "composted food scraps from dinner",
+      "category": "waste",
+      "impact_score": 15.0,
+      "timestamp": "2024-01-18T19:30:00Z"
+    }
+  ],
+  "category_descriptions": {
+    "transport": {
+      "name": "Transportation & Mobility",
+      "description": "Sustainable transportation choices like walking, biking, public transit, and carpooling",
+      "impact_areas": ["carbon emissions", "air quality", "urban planning"],
+      "example_habits": [
+        "Taking public transportation",
+        "Walking or biking short distances",
+        "Carpooling with colleagues",
+        "Working from home",
+        "Using electric or hybrid vehicles"
+      ]
+    },
+    "energy": {
+      "name": "Energy Conservation",
+      "description": "Reducing energy consumption and using renewable energy sources",
+      "impact_areas": ["greenhouse gas emissions", "resource conservation", "cost savings"],
+      "example_habits": [
+        "Turning off lights and electronics",
+        "Using energy-efficient appliances",
+        "Adjusting thermostat settings",
+        "Installing solar panels",
+        "Unplugging devices when not in use"
+      ]
+    },
+    "waste": {
+      "name": "Waste Reduction & Recycling",
+      "description": "Minimizing waste production through reduction, reuse, and recycling",
+      "impact_areas": ["landfill reduction", "resource conservation", "pollution prevention"],
+      "example_habits": [
+        "Using reusable bags and containers",
+        "Recycling properly",
+        "Composting organic waste",
+        "Repairing items instead of replacing",
+        "Avoiding single-use plastics"
+      ]
+    },
+    "water": {
+      "name": "Water Conservation",
+      "description": "Protecting and conserving water resources through efficient usage",
+      "impact_areas": ["water scarcity", "energy conservation", "ecosystem protection"],
+      "example_habits": [
+        "Taking shorter showers",
+        "Fixing leaks promptly",
+        "Using water-efficient fixtures",
+        "Collecting rainwater",
+        "Watering plants with greywater"
+      ]
+    },
+    "consumption": {
+      "name": "Sustainable Consumption",
+      "description": "Making conscious purchasing decisions that support sustainability",
+      "impact_areas": ["supply chain impact", "local economy", "ethical practices"],
+      "example_habits": [
+        "Buying local and organic products",
+        "Choosing sustainable brands",
+        "Shopping secondhand",
+        "Supporting ethical companies",
+        "Buying only what you need"
+      ]
+    },
+    "food": {
+      "name": "Food & Diet",
+      "description": "Sustainable food choices that reduce environmental impact",
+      "impact_areas": ["carbon footprint", "water usage", "land use", "biodiversity"],
+      "example_habits": [
+        "Eating plant-based meals",
+        "Buying local seasonal produce",
+        "Reducing food waste",
+        "Growing your own food",
+        "Supporting sustainable farming"
+      ]
+    }
+  },
+  "scoring_guidelines": {
+    "transport": {
+      "base_score": 25,
+      "difficulty_multiplier": 1.2,
+      "high_impact_keywords": ["car-free", "public transport", "bike", "walk", "carpool"],
+      "examples": {
+        "walking short distance": 25,
+        "taking public transit": 30,
+        "biking to work": 35,
+        "car-free day": 40
+      }
+    },
+    "energy": {
+      "base_score": 20,
+      "difficulty_multiplier": 0.8,
+      "high_impact_keywords": ["solar", "renewable", "efficient", "conservation"],
+      "examples": {
+        "turning off lights": 16,
+        "unplugging devices": 18,
+        "using LED bulbs": 22,
+        "installing solar": 45
+      }
+    },
+    "waste": {
+      "base_score": 15,
+      "difficulty_multiplier": 1.0,
+      "high_impact_keywords": ["zero waste", "compost", "recycle", "reuse"],
+      "examples": {
+        "using reusable bag": 15,
+        "recycling bottles": 18,
+        "composting": 20,
+        "zero waste day": 35
+      }
+    },
+    "water": {
+      "base_score": 12,
+      "difficulty_multiplier": 0.9,
+      "high_impact_keywords": ["conservation", "efficient", "rainwater", "greywater"],
+      "examples": {
+        "shorter shower": 11,
+        "fixing leak": 15,
+        "rainwater collection": 25,
+        "greywater reuse": 30
+      }
+    },
+    "consumption": {
+      "base_score": 18,
+      "difficulty_multiplier": 1.3,
+      "high_impact_keywords": ["local", "organic", "sustainable", "ethical"],
+      "examples": {
+        "buying local": 23,
+        "choosing organic": 25,
+        "thrift shopping": 28,
+        "supporting ethical brand": 35
+      }
+    },
+    "food": {
+      "base_score": 22,
+      "difficulty_multiplier": 1.1,
+      "high_impact_keywords": ["plant-based", "local", "organic", "homegrown"],
+      "examples": {
+        "plant-based meal": 24,
+        "local produce": 26,
+        "meatless day": 30,
+        "growing own food": 38
+      }
+    }
+  }
+}

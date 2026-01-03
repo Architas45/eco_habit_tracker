@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Green Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🌱 AI Green Habit Tracker</h1>
+
+<!-- Log Habit -->
+<div class="card">
+    <h2>Log a Green Habit</h2>
+    <input type="text" id="habitInput" placeholder="e.g. turned off unused lights">
+    <button onclick="logHabit()">Submit</button>
+    <p id="habitMsg"></p>
+</div>
+
+<!-- Habits -->
+<div class="card">
+    <h2>Logged Habits</h2>
+    <button onclick="fetchHabits()">Refresh</button>
+    <ul id="habitList"></ul>
+</div>
+
+<!-- Green Score -->
+<div class="card">
+    <h2>Green Score</h2>
+    <button onclick="fetchScore()">Get Score</button>
+    <div id="scoreData"></div>
+</div>
+
+<!-- Suggestions -->
+<div class="card">
+    <h2>AI Suggestions</h2>
+    <button onclick="fetchSuggestions()">Get Suggestions</button>
+    <ul id="suggestionsList"></ul>
+</div>
+
+<!-- Agriculture -->
+<div class="card">
+    <h2>Agriculture Tips</h2>
+    <button onclick="fetchAgriTips()">View Tips</button>
+    <ul id="agriTips"></ul>
+
+    <h3>Crop Recommendation</h3>
+    <input type="text" id="cropInput" placeholder="Enter crop name">
+    <button onclick="getCropRecommendation()">Recommend</button>
+    <p id="cropResult"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
