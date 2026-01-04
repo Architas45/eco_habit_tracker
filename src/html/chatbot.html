@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Habit Tracker – Feedback Bot</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f766e, #22c55e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chat-container {
+      width: 420px;
+      height: 560px;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .header {
+      background: #065f46;
+      color: #ffffff;
+      padding: 16px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .sub-header {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .messages {
+      flex: 1;
+      padding: 16px;
+      background: #ecfdf5;
+      overflow-y: auto;
+    }
+
+    .msg {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      max-width: 80%;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .bot {
+      background: #d1fae5;
+      color: #064e3b;
+      align-self: flex-start;
+    }
+
+    .user {
+      background: #16a34a;
+      color: #ffffff;
+      align-self: flex-end;
+    }
+
+    .footer {
+      display: flex;
+      padding: 12px;
+      border-top: 1px solid #d1d5db;
+    }
+
+    .footer input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .footer button {
+      margin-left: 8px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      background: #065f46;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .footer button:hover {
+      background: #064e3b;
+    }
+
+    button {
+    padding: 8px 12px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+    button:hover {
+    background: #16a34a;
+}
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="header">
+    🌱 Eco Habit Tracker Feedback Bot
+    <div class="sub-header">Help us build a greener future</div>
+  </div>
+
+  <div class="messages" id="messages">
+    <div class="msg bot">
+      Hi 👋 Thanks for using Eco Habit Tracker 🌍<br>
+      Please share your feedback or suggestions to improve sustainability.
+    </div>
+  </div>
+
+  <div class="footer">
+    <input type="text" id="input" placeholder="Share your eco-feedback..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <div class="card">
+    <a href="index.html">
+        <button>⬅ Back to Home</button>
+    </a>
+</div>
+</div>
+
+<script>
+  const messages = document.getElementById('messages');
+  const input = document.getElementById('input');
+
+  function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, 'user');
+    input.value = '';
+
+    setTimeout(() => ecoBotReply(text), 700);
+  }
+
+  function addMessage(text, sender) {
+    const div = document.createElement('div');
+    div.className = `msg ${sender}`;
+    div.innerText = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function ecoBotReply(userText) {
+    let reply = "Thank you for contributing towards a sustainable future 🌱";
+
+    const text = userText.toLowerCase();
+
+    if (text.includes('water')) {
+      reply = "Water conservation is crucial 💧. We'll work on better water tracking features.";
+    } else if (text.includes('energy') || text.includes('electricity')) {
+      reply = "Energy efficiency saves the planet ⚡. Thanks for your suggestion!";
+    } else if (text.includes('waste') || text.includes('plastic')) {
+      reply = "Reducing waste is a big win ♻️. We'll improve waste tracking insights.";
+    } else if (text.includes('transport') || text.includes('travel')) {
+      reply = "Eco-friendly transport reduces carbon footprint 🚲. Great input!";
+    } else if (text.includes('bad') || text.includes('problem')) {
+      reply = "Sorry for the inconvenience 🙏. Please tell us how we can improve.";
+    } else if (text.includes('good') || text.includes('nice')) {
+      reply = "We're happy you like the app 🌟. Let's save the planet together!";
+    } else if (text.length > 25) {
+      reply = "Thanks for the detailed eco-feedback 🌍. Our AI will analyze this.";
+    }
+
+    addMessage(reply, 'bot');
+  }
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+</script>
+
+</body>
+</html>

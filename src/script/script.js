@@ -1,20 +1,69 @@
-const BASE_URL = "http://127.0.0.1:5001";
+const BASE_URL = "http://127.0.0.1:5000";
 
 // Log Habit
+// function logHabit() {
+//     const habit = document.getElementById("habitInput").value;
+
+//     fetch(`${BASE_URL}/api/habits`, {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({ habit })
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//         document.getElementById("habitMsg").innerText = data.message || data.error;
+//         fetchHabits();
+//     });
+// }
+
 function logHabit() {
-    const habit = document.getElementById("habitInput").value;
+    const habitInput = document.getElementById("habitInput");
+    const habitMsg = document.getElementById("habitMsg");
+    const protectedContent = document.getElementById("protectedContent");
+
+    const habit = habitInput.value.trim();
+
+    // Basic validation
+    if (!habit) {
+        habitMsg.style.color = "red";
+        habitMsg.innerText = "Please enter a green habit!";
+        return;
+    }
 
     fetch(`${BASE_URL}/api/habits`, {
-        method: "POST",
+        method: "GET",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ habit })
+        // body: JSON.stringify({ habit })
     })
     .then(res => res.json())
     .then(data => {
-        document.getElementById("habitMsg").innerText = data.message || data.error;
+        if (data.error) {
+            habitMsg.style.color = "red";
+            habitMsg.innerText = data.error;
+            return;
+        }
+
+        // Success
+        habitMsg.style.color = "green";
+        habitMsg.innerText = data.message || "Habit logged successfully 🌱";
+
+       // 🔓 Unlock all pages / sections
+        protectedContent.style.display = "block";
+
+        // Refresh habit list
         fetchHabits();
+
+        // Clear input
+        habitInput.value = "";
+    })
+    .catch(err => {
+        habitMsg.style.color = "red";
+        habitMsg.innerText = "Server error. Please try again.";
+        console.error(err);
     });
 }
+
+
 
 // Fetch Habits
 function fetchHabits() {

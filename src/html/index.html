@@ -7,31 +7,17 @@
 </head>
 <body>
 
-<h1>🌱 AI Green Habit Tracker</h1>
-
-<div class="card">
-    <h2>📊 View Statistics</h2>
-    <a href="stats.html">
-        <button>Open Stats Dashboard</button>
-    </a>
-</div>
-
-<div class="card">
-    <h2>💡 AI Suggestions</h2>
-    <a href="suggestions.html">
-        <button>View Personalized Suggestions</button>
-    </a>
-</div>
-
-<div class="card">
-    <h2>🏆 Green Score</h2>
-    <a href="score.html">
-        <button>View Green Score</button>
-    </a>
-</div>
+<header class="header">
+    <div class="header-container">
+        <h1 class="logo">🌱 AI Green Habit Tracker</h1>
+        <p class="tagline">Track Habits • Reduce Impact • Save the Planet</p>
+    </div>
+</header>
 
 
-<!-- Log Habit -->
+<!-- <h1>🌱 AI Green Habit Tracker</h1> -->
+
+<!-- Log Habit (VISIBLE ALWAYS) -->
 <div class="card">
     <h2>Log a Green Habit</h2>
     <input type="text" id="habitInput" placeholder="e.g. turned off unused lights">
@@ -39,39 +25,108 @@
     <p id="habitMsg"></p>
 </div>
 
-<!-- Habits -->
-<div class="card">
-    <h2>Logged Habits</h2>
-    <button onclick="fetchHabits()">Refresh</button>
-    <ul id="habitList"></ul>
-</div>
-
-<!-- Green Score
-<div class="card">
-    <h2>Green Score</h2>
-    <button onclick="fetchScore()">Get Score</button>
-    <div id="scoreData"></div>
+<!-- <div>
+    <h2>🤖 Chat with Feedback Bot</h2>
+    <a href="chatbot.html">
+        <button>Open Chatbot</button>
+    </a>
 </div> -->
 
-<!-- Suggestions
-<div class="card">
-    <h2>AI Suggestions</h2>
-    <button onclick="fetchSuggestions()">Get Suggestions</button>
-    <ul id="suggestionsList"></ul>
-</div> -->
+<!-- EVERYTHING BELOW IS HIDDEN INITIALLY -->
+<div id="protectedContent">
 
-<!-- Agriculture -->
-<div class="card">
-    <h2>Agriculture Tips</h2>
-    <button onclick="fetchAgriTips()">View Tips</button>
-    <ul id="agriTips"></ul>
+    <div class="card">
+        <h2>📊 View Statistics</h2>
+        <a href="stats.html">
+            <button>Open Stats Dashboard</button>
+        </a>
+    </div>
 
-    <h3>Crop Recommendation</h3>
-    <input type="text" id="cropInput" placeholder="Enter crop name">
-    <button onclick="getCropRecommendation()">Recommend</button>
-    <p id="cropResult"></p>
+    <div class="card">
+        <h2>💡 AI Suggestions</h2>
+        <a href="suggestions.html">
+            <button>View Personalized Suggestions</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🏆 Green Score</h2>
+        <a href="score.html">
+            <button>View Green Score</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Logged Habits</h2>
+        <button onclick="fetchHabits()">Refresh</button>
+        <ul id="habitList"></ul>
+    </div>
+
+    <div class="card">
+        <h2>Agriculture Tips</h2>
+        <button onclick="fetchAgriTips()">View Tips</button>
+        <ul id="agriTips"></ul>
+
+    <div>
+    <h2>🤖 Chat with Feedback Bot</h2>
+    <a href="chatbot.html">
+        <button>Open Chatbot</button>
+    </a>
+</div>
+<!-- 
+        <h3>Crop Recommendation</h3>
+        <input type="text" id="cropInput" placeholder="Enter crop name">
+        <button onclick="getCropRecommendation()">Recommend</button>
+        <p id="cropResult"></p>
+    </div> -->
+
 </div>
 
-<script src="../script/"></script>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left Section -->
+        <div class="footer-section">
+            <h3>🌱 AI Green Habit Tracker</h3>
+            <p class="eco-text">
+                Thank you for choosing a sustainable future.<br>
+                Every small habit makes a big green impact.
+            </p>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>
+                
+                greenhabit.ai@gmail.com
+            </p>
+            <p>
+                
+                @aigreenhabit
+            </p>
+            <p>
+                
+                @greenhabit_ai
+            </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="footer-section slogan">
+            <h4>🌍 Our Slogan</h4>
+            <p>
+                “Track Today. Act Green. Sustain Tomorrow.”
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 AI Green Habit Tracker | Built for a Greener Planet 🌿
+    </div>
+</footer>
+
+
+<script src="../script/script.js"></script>
 </body>
 </html>
